@@ -1,0 +1,48 @@
+<html>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+    <center></center>
+    <script>
+        var nameArray = new Array;
+function addEvent() {
+    var enteredName = document.getElementById('eventName').value;
+    
+        if(nameArray.includes(enteredName)){
+            document.getElementById("successMessage").innerHTML = "<h3>Event name already exists. Try with some other name</h3>";
+        }
+        else{
+            nameArray.push(enteredName);
+            document.getElementById("successMessage").innerHTML = "<h3>Event name added successfully!</h3>";
+}
+}
+function displayEvent() {
+    var table1 = "<table id=\"resultTable\"><th>Event Name</th><tr>";
+    for (var i = 0; i < nameArray.length; i++) {
+        table1 += "<td>" + nameArray[i] + "</td></tr>";
+    }
+     table1 += "</table>";
+    document.getElementById("result").innerHTML = "<h3>Event Details</h3>" + "" + table1;
+}
+
+
+    </script>
+    <head>
+          <script src="script.js" type="text/javascript"> </script>   
+</head>
+	<body align="center">
+    <h2> Validating Duplicate Events</h2>
+    <div> Enter event Name &nbsp <input type="text" id="eventName" value=""> 
+               <br>  <br>
+        <button id="add" onclick="addEvent()">Add Event</button>
+        &nbsp &nbsp
+       <button id="display" onclick="displayEvent()">Display Event</button> 
+    <br><br>
+                                                                                                                                                                          </div>
+    <div id="successMessage" style="color:green;"></div>
+        <div id="result"></div>
+      </center>
+	</body>
+</html>
