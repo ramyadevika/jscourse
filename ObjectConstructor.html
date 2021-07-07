@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <script>
+    
+function Events(name,age) {
+    this.name = name;
+    this.age = age;
+    
+}
+
+
+function displayDetails() {
+    var name = document.getElementById('Name').value;
+var age = document.getElementById('Age').value;
+
+
+    var NewEvent = new Events(name,age);
+    document.getElementById("result").innerHTML ="Hi " + NewEvent.name+
+" Your age is " + NewEvent.age; 
+if(age>=18){
+document.getElementById("result1").innerHTML = "<h2 style=\"color:green\">Saved Successfully"+"<br>" ;
+}
+else{
+    document.getElementById("result1").innerHTML = "<h2 style=\"color:green\">You are not eligible"+"<br>" ; 
+}
+}
+    </script>
+</head>
+<body>
+    
+
+        <h3 Style="text-align:center">Event Details</h3>
+        Name: <input type="text" id="Name"  value=""><br><br>
+        Age <input type="text" id="Age"  value=""><br><br>
+         
+        <br><button id="submit" onclick="displayDetails()">Submit</button>
+        
+        <br>
+        <h3><div id="result" Style="text-align:center" ></div></h3>
+        <h3><div id="result1" Style="text-align:center" ></div></h3>
+        
+</body>
+</html>
